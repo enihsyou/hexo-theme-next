@@ -34,11 +34,20 @@
     padding-top: 10px;
 
     .header-anchor{
-      float: right;
-      margin-left: 10px;
+      // modified by enihsyou
+      // change right float to left float, increase left margin to -20px and add right padding
+      // because we want anchor appear immediately before text and with no joggle on hovering
+      float: left;
+      margin-left: -20px;
+      padding-right: 10px;
       color: $grey-light;
       border-bottom-style: none;
       visibility: hidden;
+
+      // also this, to avoid toc() function by hexo accidentally bring anchor character into TOC list
+      &:before {
+        content: '¶'
+      }
 
       &:hover{
         color: inherit;
@@ -56,7 +65,10 @@
     box-sizing: border-box;
     margin: auto;
     padding: 3px;
-    border: 1px solid $gray-lighter;
+
+    // modified by enihsyou
+    // disable gray border around images
+    //border: 1px solid $gray-lighter;
   }
 }
 
